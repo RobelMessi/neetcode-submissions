@@ -1,24 +1,14 @@
+from collections import defaultdict
 class Solution:
-    def isAnagram(self, s: str, t: str):
-        s_list = list(s)
-        t_list = list(t)
-        sorted_list1 = sorted(s_list)
-        sorted_list2 = sorted(t_list)
-        string1 = ""
-        string2 = ""
-        for char in sorted_list1:
-            string1+=char
-        for char in sorted_list2:
-            string2+= char
-        if string1==string2:
+    def isAnagram(self, s: str, t: str) -> bool:
+        anagram_map = defaultdict(list)
+        sorted_s = sorted(s)
+        sorted_t = sorted(t)
+        string_sorted_s = "".join(sorted_s)
+        string_sorted_t = "".join(sorted_t)
+        print(string_sorted_s)
+        print(string_sorted_t)
+        if string_sorted_s == string_sorted_t:
             return True
-        else:
-            return False
-        
-       
-        
-            
-        
-       
-
+        return False
         
